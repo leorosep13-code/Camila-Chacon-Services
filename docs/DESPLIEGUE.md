@@ -115,6 +115,15 @@ a `main` y sale a producción.
 
 ## Solución de problemas
 
+**Sale un 404 de Vercel (`NOT_FOUND`) aunque el build diga "Ready".** Significa que el proyecto
+no está usando el preset de Next.js: Vercel compila, pero luego sirve la carpeta `public/` como
+sitio estático y, al no haber un `index.html`, todo devuelve 404. Se reconoce porque
+`/foto-cami.png` sí responde y `/` no.
+
+El repositorio ya trae `vercel.json` con `"framework": "nextjs"`, que lo fija de forma permanente
+y tiene prioridad sobre lo que diga el panel. Si aun así ocurre, comprueba en **Settings → Build
+and Deployment → Framework Preset** que ponga _Next.js_, y vuelve a desplegar.
+
 **El build falla por tipos o lint.** Es intencional: `next.config.ts` no permite desplegar con
 errores. Ejecuta `npm run check` en local para ver el detalle.
 

@@ -201,4 +201,8 @@ Los precios del catálogo están en `sections.ts → catalog`.
 
 ## Despliegue
 
+`vercel.json` fija `"framework": "nextjs"`. No lo quites: sin eso Vercel puede importar el
+proyecto con el preset _Other_, compilar bien y luego servir `public/` como sitio estático, con lo
+que todas las rutas devuelven 404.
+
 Ver [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md).
