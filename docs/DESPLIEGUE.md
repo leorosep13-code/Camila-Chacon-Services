@@ -39,7 +39,7 @@ git config --global user.email "tu@correo.com"
 | Nombre                           | Valor                                                             |
 | -------------------------------- | ----------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`           | `https://camila-chacon-services.vercel.app` (o tu dominio propio) |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER`    | `573045673052`                                                    |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER`    | `573045673052` — **con el 57 delante**                            |
 | `NEXT_PUBLIC_CONTACT_EMAIL`      | `camila.chaconb@gmail.com`                                        |
 | `NEXT_PUBLIC_INSTAGRAM_URL`      | `https://instagram.com/clubdecami`                                |
 | `NEXT_PUBLIC_CALENDAR_EMBED_URL` | la URL larga del iframe (está en `.env.example`)                  |
@@ -126,6 +126,10 @@ and Deployment → Framework Preset** que ponga _Next.js_, y vuelve a desplegar.
 
 **El build falla por tipos o lint.** Es intencional: `next.config.ts` no permite desplegar con
 errores. Ejecuta `npm run check` en local para ver el detalle.
+
+**Los botones de WhatsApp abren un chat vacio o inexistente.** Al numero le falta el codigo de
+pais. `NEXT_PUBLIC_WHATSAPP_NUMBER` debe ser `573045673052`, no `3045673052`. Se comprueba mirando
+el codigo fuente de la pagina publicada: los enlaces deben decir `wa.me/573045673052`.
 
 **El calendario no aparece.** Es el comportamiento correcto hasta que el visitante acepta. Pulsa
 «Cargar calendario» o acepta en el aviso de cookies.

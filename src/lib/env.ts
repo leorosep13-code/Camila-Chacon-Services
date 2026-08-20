@@ -12,6 +12,9 @@
  *    configuradas siga funcionando en vez de romperse.
  */
 
+/** Numero de respaldo, en formato internacional sin "+" (57 = Colombia). */
+const DEFAULT_WHATSAPP = "573045673052";
+
 function required(value: string | undefined, fallback: string, name: string): string {
   const resolved = value?.trim() || fallback;
   if (!value?.trim() && process.env.NODE_ENV === "production" && typeof window === "undefined") {
@@ -21,10 +24,41 @@ function required(value: string | undefined, fallback: string, name: string): st
   return resolved;
 }
 
-/** Normaliza un telefono a solo digitos (formato que exige wa.me). */
+/**
+ * Normaliza un telefono al formato que exige wa.me: solo digitos, con codigo
+ * de pais y sin "+".
+ *
+ * Es la validacion mas importante del archivo: si el numero sale mal, TODOS
+ * los botones de contacto del sitio apuntan a un chat que no existe, y no hay
+ * ningun error visible que lo delate. Por eso no basta con "tiene digitos".
+ *
+ * Casos que cubre:
+ *  - "+57 304 567 3052" o "573045673052" -> se acepta tal cual.
+ *  - "304 567 3052" (movil colombiano sin indicativo) -> se le antepone 57.
+ *    Es el error mas facil de cometer al cargar la variable en Vercel.
+ *  - Cualquier otra cosa -> se descarta y se usa el numero por defecto, con
+ *    un aviso en los logs del build.
+ */
 function toWhatsAppDigits(raw: string): string {
   const digits = raw.replace(/\D/g, "");
-  return digits.length >= 8 ? digits : "573045673052";
+
+  // Movil colombiano sin codigo de pais: 10 digitos que empiezan por 3.
+  if (/^3\d{9}$/.test(digits)) {
+    console.warn(
+      `[env] NEXT_PUBLIC_WHATSAPP_NUMBER ("${raw}") venia sin codigo de pais. ` +
+        `Se corrige a 57${digits}. Corrigelo en las variables de entorno para no depender de esto.`,
+    );
+    return `57${digits}`;
+  }
+
+  // Un numero internacional valido tiene entre 11 y 15 digitos con indicativo.
+  if (digits.length >= 11 && digits.length <= 15) return digits;
+
+  console.warn(
+    `[env] NEXT_PUBLIC_WHATSAPP_NUMBER ("${raw}") no parece un numero valido con ` +
+      `codigo de pais. Se usa el valor por defecto: ${DEFAULT_WHATSAPP}.`,
+  );
+  return DEFAULT_WHATSAPP;
 }
 
 /** Solo acepta URLs https, para no inyectar http:// ni javascript: por error. */
@@ -39,7 +73,7 @@ function safeHttpsUrl(raw: string, fallback: string): string {
 
 const DEFAULTS = {
   siteUrl: "https://clubdecami.com",
-  whatsapp: "573045673052",
+  whatsapp: DEFAULT_WHATSAPP,
   email: "camila.chaconb@gmail.com",
   instagram: "https://instagram.com/clubdecami",
   calendarEmbed:
