@@ -158,7 +158,9 @@ Además de lo que ya tenía el prototipo:
 5. **Guardar contacto** (`.vcf`) para la agenda del móvil — ruta `/api/vcard`.
 6. **Compartir** con la API nativa del sistema, con copia del enlace como respaldo.
 7. **Formulario validado** con mensajes de error claros y contador de caracteres.
-8. **Enlace `tel:` y `mailto:`** en el pie.
+8. **Enlace `mailto:`** en el pie; el telefono del pie abre WhatsApp, que es el canal
+   preferente del negocio. El enlace `tel:` se usa como respaldo si el navegador bloquea el
+   portapapeles.
 9. **404 con salida a WhatsApp**, para no perder a quien llega por un enlace roto.
 
 ---
