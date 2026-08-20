@@ -1,0 +1,37 @@
+# dependencias
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# build
+/.next/
+/out/
+/build
+*.tsbuildinfo
+next-env.d.ts
+
+# entorno — NUNCA subir secretos
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# artefactos del prototipo original
+# El prototipo original se conserva en /legacy como referencia de diseño.

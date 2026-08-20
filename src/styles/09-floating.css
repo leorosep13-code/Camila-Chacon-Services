@@ -1,0 +1,171 @@
+/* ===================== FLOTANTES / MODAL ===================== */
+.wa {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 75;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.4);
+  transition: transform 0.25s;
+}
+.wa:hover {
+  transform: scale(1.08);
+}
+.wa svg {
+  width: 28px;
+  height: 28px;
+}
+.top {
+  position: fixed;
+  right: 18px;
+  bottom: 84px;
+  z-index: 75;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--carbon);
+  color: #fff;
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+.top.is-on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+.top svg {
+  width: 19px;
+  height: 19px;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(26, 26, 26, 0.62);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s;
+}
+.modal.is-on {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal__box {
+  background: #fff;
+  border-radius: var(--r-xl);
+  max-width: 480px;
+  width: 100%;
+  padding: clamp(26px, 4vw, 40px);
+  text-align: center;
+  position: relative;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: var(--sh-l);
+}
+.modal.is-on .modal__box {
+  transform: none;
+}
+.modal__x {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--gris-claro);
+  color: var(--carbon);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.modal__x svg {
+  width: 16px;
+  height: 16px;
+}
+.modal__ast {
+  width: 52px;
+  height: 52px;
+  color: var(--morado);
+  margin: 0 auto 16px;
+  animation: spin 12s linear infinite;
+}
+.modal h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.modal p {
+  font-size: 0.94rem;
+}
+.modal .btn {
+  margin-top: 22px;
+  width: 100%;
+}
+
+/* ===================== REVEAL ===================== */
+.rv {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.rv.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
+  .hero h1 .line > span {
+    transform: none;
+  }
+  .hero__sub,
+  .hero__actions,
+  .hero__scroll {
+    opacity: 1;
+  }
+}
+@media print {
+  .hdr,
+  .wa,
+  .top,
+  .modal,
+  .topbar {
+    display: none;
+  }
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
+}

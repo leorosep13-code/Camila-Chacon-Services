@@ -1,0 +1,12 @@
+# Normaliza los finales de linea: en el repositorio siempre LF.
+# Asi el proyecto se ve igual en Windows, macOS y en el build de Vercel.
+* text=auto eol=lf
+
+# Binarios: que Git no los toque.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.woff2 binary
+*.ico binary

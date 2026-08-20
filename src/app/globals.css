@@ -1,0 +1,25 @@
+/* =====================================================================
+   club by cami — hoja de estilos global
+   ---------------------------------------------------------------------
+   Los archivos 01 a 09 son el CSS original del prototipo, partido por
+   secciones y SIN cambios de diseño: mismos colores, mismas animaciones,
+   mismas tipografías. El único ajuste es que la fuente ahora se sirve
+   desde el propio dominio (next/font) mediante la variable
+   --font-poppins, en lugar de pedirla a Google en cada visita.
+
+   El archivo 10 contiene únicamente las funciones nuevas.
+
+   El ORDEN IMPORTA: el CSS depende de la cascada, así que no reordenes
+   estos imports.
+   ===================================================================== */
+
+@import "../styles/01-tokens.css";
+@import "../styles/02-base.css";
+@import "../styles/03-buttons.css";
+@import "../styles/04-header.css";
+@import "../styles/05-hero.css";
+@import "../styles/06-intro.css";
+@import "../styles/07-showcase.css";
+@import "../styles/08-contact.css";
+@import "../styles/09-floating.css";
+@import "../styles/10-additions.css";

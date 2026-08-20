@@ -1,0 +1,79 @@
+/* ===================== BOTONES ===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.24s,
+    background 0.24s,
+    color 0.24s,
+    border-color 0.24s;
+  white-space: nowrap;
+  text-align: center;
+}
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+.btn--morado {
+  background: var(--morado);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(130, 109, 238, 0.35);
+}
+.btn--morado:hover {
+  background: var(--morado-2);
+  transform: translateY(-3px);
+}
+.btn--verde {
+  background: var(--verde);
+  color: var(--carbon);
+}
+.btn--verde:hover {
+  filter: brightness(1.05);
+  transform: translateY(-3px);
+}
+.btn--negro {
+  background: var(--carbon);
+  color: #fff;
+}
+.btn--negro:hover {
+  background: #000;
+  transform: translateY(-3px);
+}
+.btn--linea {
+  border-color: var(--morado);
+  color: var(--morado);
+  background: transparent;
+}
+.btn--linea:hover {
+  background: var(--morado);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.btn--blanco {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+.btn--blanco:hover {
+  background: #fff;
+  color: var(--morado);
+  transform: translateY(-3px);
+}
+.btn--sm {
+  padding: 11px 20px;
+  font-size: 0.75rem;
+}
+.btn--wrap {
+  white-space: normal;
+}

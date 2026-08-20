@@ -1,0 +1,44 @@
+name: Verificación
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Permisos mínimos: el workflow solo necesita leer el código.
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    name: Tipos, lint, formato y build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `npm ci` instala exactamente lo del package-lock.json.
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Comprobar tipos
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Formato
+        run: npm run format:check
+
+      - name: Build de producción
+        run: npm run build
+
+      # Falla si aparece una vulnerabilidad alta o crítica en las dependencias.
+      - name: Auditoría de dependencias
+        run: npm run audit:ci

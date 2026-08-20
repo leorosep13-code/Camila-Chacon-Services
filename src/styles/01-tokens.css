@@ -1,0 +1,30 @@
+/* ===================== TOKENS ===================== */
+:root {
+  --morado: #826dee;
+  --morado-2: #6250d6;
+  --morado-3: #4a3aae;
+  --morado-suave: #efebff;
+  --pink: #ff99dc;
+  --pink-suave: #ffeff9;
+  --pink-fuerte: #e0559f;
+  --verde: #d8f382;
+  --verde-2: #a8cf3e;
+  --verde-suave: #f4fbe0;
+  --carbon: #1a1a1a;
+  --gris: #4b4b4b;
+  --gris-claro: #f2f2f2;
+  --blanco: #ffffff;
+  --linea: #e6e6ec;
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 38px;
+  --sh-s: 0 2px 12px rgba(26, 26, 26, 0.06);
+  --sh-m: 0 16px 40px rgba(26, 26, 26, 0.1);
+  --sh-l: 0 30px 80px rgba(74, 58, 174, 0.22);
+  --maxw: 1200px;
+  --pad: clamp(20px, 5vw, 44px);
+  --gap: clamp(18px, 2.4vw, 28px);
+  --sec-y: clamp(66px, 8vw, 130px);
+  --bar-h: 44px;
+}
