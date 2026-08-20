@@ -167,25 +167,29 @@ Además de lo que ya tenía el prototipo:
 
 ## Foto de Camila
 
-El repositorio incluye `public/foto-cami.png`, un marcador de posición con los colores de la marca.
+La foto vive en `public/foto_de_cami.jpeg` (1086 × 1448, retrato 3:4).
 
-Para poner la foto real:
+El contenedor tiene `aspect-ratio: 4/5` y `object-fit: cover`, asi que la imagen se recorta por
+los lados y se encuadra con `object-position: 50% 22%` para que el rostro quede a la vista. Si
+alguna vez sale mal encuadrada, ese es el valor a tocar, en `src/styles/06-intro.css`.
 
-1. Guarda la imagen en `public/` (recomendado: JPG o WebP, retrato, ~900×1100 px, menos de 400 KB).
-2. Abre `src/content/sections.ts` y actualiza el bloque `about.photo`:
+Para cambiarla:
+
+1. Guarda la nueva imagen en `public/` (retrato, idealmente menos de 400 KB).
+2. En `src/content/sections.ts`, actualiza `about.photo` con el nombre y las **dimensiones reales**
+   del archivo:
 
 ```ts
 photo: {
-  src: "/foto-cami.jpg",   // el nombre de tu archivo
+  src: "/tu-archivo.jpeg",
   alt: "Camila Chacón, consultora de crecimiento digital y comercial",
-  width: 922,              // ancho real de la imagen
-  height: 1120,            // alto real de la imagen
+  width: 1086,   // ancho real en pixeles
+  height: 1448,  // alto real en pixeles
 },
 ```
 
-Next.js se encarga solo de convertirla a AVIF/WebP y de servir el tamaño adecuado a cada pantalla.
-
----
+Las dimensiones tienen que coincidir con el archivo: Next.js las usa para reservar el espacio
+antes de que cargue y para generar las versiones AVIF/WebP. Si no coinciden, la imagen se deforma.
 
 ## Editar textos
 

@@ -38,10 +38,12 @@ export const promo = {
 export const about = {
   hi: "¡Hola, soy Cami!",
   photo: {
-    src: "/foto-cami.png", // TODO: sustituir por la foto real (ver README, paso "Foto de Camila")
+    src: "/foto_de_cami.jpeg",
     alt: "Camila Chacón, consultora de crecimiento digital y comercial",
-    width: 922,
-    height: 1120,
+    // Dimensiones reales del archivo. Next.js las usa para reservar el espacio
+    // y generar las versiones AVIF/WebP; si no coinciden, la imagen se deforma.
+    width: 1086,
+    height: 1448,
   },
   credential: {
     strong: "Ingeniera industrial y project manager.",

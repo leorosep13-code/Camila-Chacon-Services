@@ -20,7 +20,9 @@ export function About() {
                 alt={about.photo.alt}
                 width={about.photo.width}
                 height={about.photo.height}
-                sizes="(max-width: 980px) 90vw, 460px"
+                // En móvil el contenedor no pasa de 400px (ver .hey__photo),
+                // así que pedir 90vw descargaría más píxeles de los necesarios.
+                sizes="(max-width: 980px) min(90vw, 400px), 460px"
                 priority={false}
               />
             </div>

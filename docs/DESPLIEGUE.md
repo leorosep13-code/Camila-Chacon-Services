@@ -118,7 +118,7 @@ a `main` y sale a producción.
 **Sale un 404 de Vercel (`NOT_FOUND`) aunque el build diga "Ready".** Significa que el proyecto
 no está usando el preset de Next.js: Vercel compila, pero luego sirve la carpeta `public/` como
 sitio estático y, al no haber un `index.html`, todo devuelve 404. Se reconoce porque
-`/foto-cami.png` sí responde y `/` no.
+un archivo de `public/` (por ejemplo `/foto_de_cami.jpeg`) sí responde y `/` no.
 
 El repositorio ya trae `vercel.json` con `"framework": "nextjs"`, que lo fija de forma permanente
 y tiene prioridad sobre lo que diga el panel. Si aun así ocurre, comprueba en **Settings → Build
