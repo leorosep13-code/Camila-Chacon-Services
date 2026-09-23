@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Question } from "@/lib/brief/questions";
+import { PhoneField } from "./PhoneField";
 
 export type Value = string | string[] | number | undefined;
 
@@ -31,6 +32,19 @@ export function QuestionField({ id, question, value, error, onChange }: Question
   const errId = error ? `${id}-err` : undefined;
 
   if (question.tipo === "texto") {
+    if (question.validar === "whatsapp") {
+      return (
+        <PhoneField
+          id={id}
+          label={question.pregunta}
+          placeholder={question.placeholder}
+          requerido={question.requerido}
+          value={(value as string) ?? ""}
+          error={error}
+          onChange={onChange}
+        />
+      );
+    }
     return (
       <div className="field">
         <label htmlFor={id}>

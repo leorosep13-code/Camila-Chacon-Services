@@ -83,8 +83,8 @@ export const briefSections: BriefSection[] = [
         tipo: "texto",
         requerido: true,
         validar: "whatsapp",
-        placeholder: "+57 304 567 3052",
-        pregunta: "Tu WhatsApp, con código de país",
+        placeholder: "304 567 3052",
+        pregunta: "Tu WhatsApp",
       },
       {
         id: "email",

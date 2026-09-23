@@ -5,7 +5,12 @@
 }
 .brief-hero__intro {
   max-width: 640px;
-  margin-top: 18px;
+  /* `.hero__in` centra el texto, pero un bloque con max-width necesita sus
+     propios márgenes automáticos para quedar centrado él mismo dentro del
+     `.wrap` (que es más ancho). Sin esto, el párrafo queda pegado a la
+     izquierda mientras el título sí se centra — se nota en pantallas anchas;
+     en el celular no, porque ahí el `.wrap` ya es más angosto que 640px. */
+  margin: 18px auto 0;
   color: rgba(255, 255, 255, 0.82);
   font-size: 1rem;
   line-height: 1.6;
@@ -49,6 +54,21 @@
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+/* ------- WhatsApp: código de país + número local ------- */
+.phone-row {
+  display: flex;
+  gap: 10px;
+}
+.phone-row select {
+  flex: 1 1 130px;
+  min-width: 110px;
+  max-width: 160px;
+}
+.phone-row input {
+  flex: 2 1 140px;
+  min-width: 0;
 }
 
 /* ------- secciones y preguntas ------- */
