@@ -42,8 +42,8 @@ export const about = {
     alt: "Camila Chacón, consultora de crecimiento digital y comercial",
     // Dimensiones reales del archivo. Next.js las usa para reservar el espacio
     // y generar las versiones AVIF/WebP; si no coinciden, la imagen se deforma.
-    width: 1086,
-    height: 1448,
+    width: 960,
+    height: 1280,
   },
   credential: {
     strong: "Ingeniera industrial y project manager.",
