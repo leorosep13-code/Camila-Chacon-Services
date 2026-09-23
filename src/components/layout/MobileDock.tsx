@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { contact } from "@/content/site";
 
@@ -19,9 +20,9 @@ export function MobileDock() {
       >
         <Icon name="wa" /> WhatsApp
       </a>
-      <a className="btn btn--morado" href="#contacto">
+      <Link className="btn btn--morado" href="/#contacto">
         <Icon name="cal" /> Agendar
-      </a>
+      </Link>
     </div>
   );
 }

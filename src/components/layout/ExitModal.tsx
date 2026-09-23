@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { exitModal } from "@/content/sections";
@@ -78,9 +79,9 @@ export function ExitModal() {
         </div>
         <h3 id="modalT">{exitModal.title}</h3>
         <p>{exitModal.text}</p>
-        <a className="btn btn--morado" href="#contacto" onClick={close}>
+        <Link className="btn btn--morado" href="/#contacto" onClick={close}>
           <Icon name="cal" /> {exitModal.cta}
-        </a>
+        </Link>
       </div>
     </div>
   );
