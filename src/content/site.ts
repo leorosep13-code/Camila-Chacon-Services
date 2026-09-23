@@ -50,35 +50,30 @@ export const contact = {
   waValores: waLink(waMessages.valores),
 } as const;
 
-// Los anclajes (#seccion) solo existen en la landing (src/app/page.tsx). Header,
-// TopBar, MobileDock, ExitModal y Brand son globales (viven en el layout raíz y
-// se renderizan en TODAS las rutas), así que sus enlaces llevan el prefijo "/"
-// para volver primero al inicio; sin él, en /brief o /privacidad el navegador
-// solo cambiaba el hash de la URL actual sin ir a ningún lado.
 export const topbar = {
   strong: "Diagnóstico gratuito de 30 minutos",
   rest: "— para ver dónde se están quedando tus ventas.",
   ctaLabel: "Ver horarios",
-  ctaHref: "/#contacto",
+  ctaHref: "#contacto",
 } as const;
 
 export const navLinks = [
-  { href: "/#sobre-mi", label: "Sobre mí" },
-  { href: "/#momentos", label: "Qué resuelvo" },
-  { href: "/#metodo", label: "Método" },
-  { href: "/#servicios", label: "Servicios" },
-  { href: "/#paquetes", label: "Paquetes" },
+  { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#momentos", label: "Qué resuelvo" },
+  { href: "#metodo", label: "Método" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#paquetes", label: "Paquetes" },
   { href: "/brief", label: "Brief de marca" },
-  { href: "/#contacto", label: "Contacto" },
+  { href: "#contacto", label: "Contacto" },
 ] as const;
 
 export const footerNav = [
-  { href: "/#sobre-mi", label: "Sobre mí" },
-  { href: "/#momentos", label: "Qué resuelvo" },
-  { href: "/#metodo", label: "Metodología" },
-  { href: "/#servicios", label: "Servicios" },
-  { href: "/#paquetes", label: "Paquetes" },
-  { href: "/#contacto", label: "Agenda tu llamada" },
+  { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#momentos", label: "Qué resuelvo" },
+  { href: "#metodo", label: "Metodología" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#paquetes", label: "Paquetes" },
+  { href: "#contacto", label: "Agenda tu llamada" },
 ] as const;
 
 export const legalNav = [

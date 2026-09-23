@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { topbar } from "@/content/site";
 import { CARGANDO, useStored, writeStored } from "@/lib/browserStore";
@@ -25,7 +24,7 @@ export function TopBar() {
         <span>
           <b>{topbar.strong}</b> <span className="hide-mb">{topbar.rest}</span>
         </span>
-        <Link href={topbar.ctaHref}>{topbar.ctaLabel}</Link>
+        <a href={topbar.ctaHref}>{topbar.ctaLabel}</a>
       </div>
       <button
         className="topbar__x"

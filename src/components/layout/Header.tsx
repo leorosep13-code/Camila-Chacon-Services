@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Brand } from "@/components/ui/Brand";
 import { Icon } from "@/components/ui/Icon";
@@ -44,13 +43,13 @@ export function Header() {
 
         <nav className={open ? "nav is-open" : "nav"} id="nav" aria-label="Navegación principal">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={close}>
+            <a key={link.href} href={link.href} onClick={close}>
               {link.label}
-            </Link>
+            </a>
           ))}
-          <Link className="btn btn--morado" href="/#contacto" onClick={close}>
+          <a className="btn btn--morado" href="#contacto" onClick={close}>
             Agenda tu llamada
-          </Link>
+          </a>
         </nav>
 
         <div className="hdr__acts">
@@ -64,9 +63,9 @@ export function Header() {
           >
             <Icon name="wa" />
           </a>
-          <Link className="btn btn--morado btn--sm hdr__cta" href="/#contacto">
+          <a className="btn btn--morado btn--sm hdr__cta" href="#contacto">
             <Icon name="cal" /> Agenda tu llamada
-          </Link>
+          </a>
         </div>
 
         <button
