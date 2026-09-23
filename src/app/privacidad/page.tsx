@@ -5,19 +5,24 @@ import { contact, site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Política de privacidad",
   description:
-    "Cómo trata club by cami los datos personales de quienes visitan el sitio o solicitan una asesoría, conforme a la Ley 1581 de 2012.",
+    "Cómo trata club by cami los datos personales de quienes visitan el sitio, solicitan una asesoría o llenan el brief de marca, conforme a la Ley 1581 de 2012.",
   alternates: { canonical: "/privacidad" },
   robots: { index: true, follow: true },
 };
 
 export default function Privacidad() {
   return (
-    <LegalPage title="Política de tratamiento de datos personales" updated="19 de agosto de 2026">
+    <LegalPage
+      title="Política de tratamiento de datos personales"
+      updated="23 de septiembre de 2026"
+    >
       <div className="legal__box">
         <p>
-          <b>En corto:</b> este sitio no tiene formularios que envíen datos a un servidor, no vende
-          ni comparte información con terceros, y no usa cookies de publicidad. Lo que escribes en
-          el formulario de contacto viaja directamente a WhatsApp, no a esta web.
+          <b>En corto:</b> este sitio no vende ni comparte tu información con terceros y no usa
+          cookies de publicidad. El formulario de contacto viaja directamente a WhatsApp, no a esta
+          web. El único formulario que sí guarda datos en un servidor es el <b>Brief de Marca</b> (
+          <code>/brief</code>), que llenas voluntariamente para iniciar un proceso de estrategia —
+          se explica en el punto 3.
         </p>
       </div>
 
@@ -53,6 +58,17 @@ export default function Privacidad() {
           datos que ingreses (nombre, correo y, si lo indicas, teléfono) son tratados por Google
           como operador y quedan en el calendario de la responsable.
         </li>
+        <li>
+          <b>
+            Brief de Marca (<code>/brief</code>):
+          </b>{" "}
+          nombre, nombre del negocio, ciudad y país, WhatsApp, correo (opcional) y el resto de
+          respuestas del formulario sobre tu negocio, marca, clientes y objetivos. A diferencia del
+          formulario de contacto, estos datos <b>sí se guardan</b> en una base de datos (Supabase)
+          para elaborar tu diagnóstico inicial y tu propuesta de estrategia. Solo el servidor de
+          este sitio puede leer o escribir esa información: no queda expuesta al navegador ni es
+          accesible públicamente.
+        </li>
       </ul>
       <p>
         Adicionalmente se recogen <b>métricas anónimas y agregadas</b> de rendimiento y visitas
@@ -63,6 +79,10 @@ export default function Privacidad() {
       <h2>4. Finalidad</h2>
       <ul>
         <li>Responder consultas comerciales y agendar sesiones de diagnóstico o asesoría.</li>
+        <li>
+          Elaborar el diagnóstico inicial de tu marca y redes a partir del Brief de Marca, y la
+          propuesta de estrategia digital correspondiente.
+        </li>
         <li>Elaborar y enviar propuestas de servicios.</li>
         <li>Ejecutar y hacer seguimiento a los servicios contratados.</li>
         <li>Cumplir obligaciones legales, contables y tributarias.</li>
@@ -135,6 +155,10 @@ export default function Privacidad() {
         </li>
         <li>
           <b>WhatsApp / Meta Platforms</b> — canal de conversación, solo si decides escribir.
+        </li>
+        <li>
+          <b>Supabase, Inc.</b> — almacenamiento de las respuestas del Brief de Marca, con acceso
+          restringido al servidor de este sitio.
         </li>
       </ul>
 

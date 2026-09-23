@@ -47,6 +47,14 @@ git config --global user.email "tu@correo.com"
 
 Opcional: `NEXT_PUBLIC_ENABLE_ANALYTICS=false` si no quieres métricas.
 
+Además, para que el formulario `/brief` guarde las respuestas en Supabase, añade estas
+dos (también para _Production_, _Preview_ y _Development_):
+
+| Nombre                      | Valor                                                                                                              |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `NEXT_PUBLIC_SUPABASE_URL`  | `https://exzhbymvxxdjcqzlttbs.supabase.co`                                                                         |
+| `SUPABASE_SERVICE_ROLE_KEY` | la clave "secret" (o "service_role") de Project Settings → API Keys — **nunca la pegues en un chat ni en el repo** |
+
 5. **Deploy.** El primer despliegue tarda 1–2 minutos.
 
 ---
@@ -76,7 +84,10 @@ El código ya está integrado; solo hay que activarlo en el panel.
 - [ ] La página carga con los colores, la fuente Poppins y las animaciones.
 - [ ] El botón de WhatsApp abre el chat con el mensaje precargado.
 - [ ] El aviso de cookies aparece; al aceptar, el calendario se carga.
-- [ ] El formulario exige la casilla de autorización antes de enviar.
+- [ ] El formulario de contacto exige la casilla de autorización antes de enviar.
+- [ ] `/brief` completa un envío de prueba (con datos ficticios) y aparece como fila nueva en la
+      tabla `briefs` de Supabase; sin las variables de Supabase, responde error 502 en vez de
+      guardar en silencio.
 - [ ] `/privacidad`, `/terminos` y `/cookies` cargan.
 - [ ] `/sitemap.xml` y `/robots.txt` responden.
 - [ ] `/api/vcard` descarga el contacto.

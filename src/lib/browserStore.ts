@@ -62,6 +62,15 @@ export function writeStored(scope: "local" | "session", key: string, value: stri
   notify();
 }
 
+export function removeStored(scope: "local" | "session", key: string) {
+  try {
+    getStore(scope)?.removeItem(key);
+  } catch {
+    // Nada que borrar si el almacenamiento no está disponible.
+  }
+  notify();
+}
+
 /**
  * Lee un valor del almacenamiento y se re-renderiza cuando cambia.
  * Devuelve `CARGANDO` hasta que termina la hidratación.

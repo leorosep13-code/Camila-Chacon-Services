@@ -7,7 +7,8 @@
    desde el propio dominio (next/font) mediante la variable
    --font-poppins, en lugar de pedirla a Google en cada visita.
 
-   El archivo 10 contiene únicamente las funciones nuevas.
+   El archivo 10 contiene las funciones nuevas del sitio original; el 11 es
+   el formulario de Brief de Marca (/brief).
 
    El ORDEN IMPORTA: el CSS depende de la cascada, así que no reordenes
    estos imports.
@@ -23,3 +24,4 @@
 @import "../styles/08-contact.css";
 @import "../styles/09-floating.css";
 @import "../styles/10-additions.css";
+@import "../styles/11-brief.css";
