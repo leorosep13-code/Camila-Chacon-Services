@@ -19,7 +19,9 @@ export function MobileDock() {
       >
         <Icon name="wa" /> WhatsApp
       </a>
-      <a className="btn btn--morado" href="#contacto">
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- <a>
+          a propósito: navega desde cualquier ruta, ver comentario en site.ts */}
+      <a className="btn btn--morado" href="/#contacto">
         <Icon name="cal" /> Agendar
       </a>
     </div>

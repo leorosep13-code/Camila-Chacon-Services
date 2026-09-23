@@ -47,7 +47,9 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a className="btn btn--morado" href="#contacto" onClick={close}>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- <a>
+              a propósito: navega desde cualquier ruta, ver comentario en site.ts */}
+          <a className="btn btn--morado" href="/#contacto" onClick={close}>
             Agenda tu llamada
           </a>
         </nav>
@@ -63,7 +65,9 @@ export function Header() {
           >
             <Icon name="wa" />
           </a>
-          <a className="btn btn--morado btn--sm hdr__cta" href="#contacto">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- <a>
+              a propósito: navega desde cualquier ruta, ver comentario en site.ts */}
+          <a className="btn btn--morado btn--sm hdr__cta" href="/#contacto">
             <Icon name="cal" /> Agenda tu llamada
           </a>
         </div>

@@ -78,7 +78,9 @@ export function ExitModal() {
         </div>
         <h3 id="modalT">{exitModal.title}</h3>
         <p>{exitModal.text}</p>
-        <a className="btn btn--morado" href="#contacto" onClick={close}>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- <a>
+            a propósito: navega desde cualquier ruta, ver comentario en site.ts */}
+        <a className="btn btn--morado" href="/#contacto" onClick={close}>
           <Icon name="cal" /> {exitModal.cta}
         </a>
       </div>
